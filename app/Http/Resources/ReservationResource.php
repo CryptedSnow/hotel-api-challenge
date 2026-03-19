@@ -17,8 +17,8 @@ class ReservationResource extends JsonResource
     {
         return [
             'id'   => $this->id,
-            'hotel_id' => $this->hotel->name,
-            'customer_id' => $this->customer->first_name . ' ' . $this->customer->last_name,
+            'hotel_id' => $this->hotel_id,
+            'customer_id' => $this->customer_id,
             'date' => $this->date ? Carbon::parse($this->date)->timezone('America/Sao_Paulo')->format('d-m-Y') : null,
             'time' => $this->time ? Carbon::parse($this->time)->timezone('America/Sao_Paulo')->format('H:i:s') : null,
         ];

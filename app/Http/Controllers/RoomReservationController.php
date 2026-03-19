@@ -28,10 +28,10 @@ class RoomReservationController extends Controller
                 'room_id'         => 'required|exists:rooms,id',
                 'arrival_date'    => 'required|date_format:Y-m-d',
                 'departure_date'  => 'required|date_format:Y-m-d|after:arrival_date',
-                'currencycode'    => 'nullable|string',
-                'meal_plan'       => 'nullable|string',
-                'guest_counts'    => 'nullable|json',
-                'totalprice'      => 'nullable|numeric',
+                'currencycode'    => 'required|string',
+                'meal_plan'       => 'required|string',
+                'guest_counts'    => 'required|array',
+                'totalprice'      => 'required|numeric',
             ]);
             $arrival   = Carbon::parse($validations['arrival_date'])->startOfDay();
             $departure = Carbon::parse($validations['departure_date'])->endOfDay();
@@ -71,10 +71,10 @@ class RoomReservationController extends Controller
                 'room_id'         => 'sometimes|required|exists:rooms,id',
                 'arrival_date'    => 'sometimes|required|date_format:Y-m-d',
                 'departure_date'  => 'sometimes|required|date_format:Y-m-d|after:arrival_date',
-                'currencycode'    => 'sometimes|nullable|string',
-                'meal_plan'       => 'sometimes|nullable|string',
-                'guest_counts'    => 'sometimes|nullable|json',
-                'totalprice'      => 'sometimes|nullable|numeric',
+                'currencycode'    => 'sometimes|required|string',
+                'meal_plan'       => 'sometimes|required|string',
+                'guest_counts'    => 'sometimes|required|array',
+                'totalprice'      => 'sometimes|required|numeric',
             ]);
             if ($request->hasAny(['room_id', 'arrival_date', 'departure_date'])) {
 

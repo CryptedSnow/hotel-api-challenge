@@ -70,7 +70,7 @@ class CustomerController extends Controller
         if (!$customer) {
             return response()->json(['message' => "Customer ID Nº $id was not found."], 404);
         }
-        $customer_name = $customer->first_name;
+        $customer_name = $customer->first_name . ' ' . $customer->last_name;
         $customer->delete();
         return response()->json(['message' => "$customer_name was deleted."], 200);
     }

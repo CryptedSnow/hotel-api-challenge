@@ -16,8 +16,8 @@ class DailyPriceResource extends JsonResource
     {
         return [
             'id'       => $this->id,
-            'room_reservation_id' => $this->roomReservation->id,
-            'rate_id'  => $this->rate->name,
+            'room_reservation_id' => $this->room_reservation_id,
+            'rate_id'  => $this->rate->rate_id,
             'date' => $this->date,
             'price'  => $this->price,
         ];
