@@ -5,13 +5,13 @@ use App\Http\Controllers\{RateController, ReservationController, RoomController,
 use Illuminate\Support\Facades\Route;
 
 Route::apiResources([
-    'hotel' => HotelController::class,
-    'room' => RoomController::class,
-    'rate' => RateController::class,
-    'customer' => CustomerController::class,
-    'reservation' => ReservationController::class,
-    'room-reservation' => RoomReservationController::class,
-    'daily-price' => DailyPriceController::class,
+    'hotels' => HotelController::class,
+    'rooms' => RoomController::class,
+    'rates' => RateController::class,
+    'customers' => CustomerController::class,
+    'reservations' => ReservationController::class,
+    'room-reservations' => RoomReservationController::class,
+    'daily-prices' => DailyPriceController::class,
 ]);
 
 Route::get('start-import', [ImportsController::class, 'import']);
