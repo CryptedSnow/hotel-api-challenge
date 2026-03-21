@@ -35,4 +35,9 @@ class RoomReservation extends Model
     {
         return $this->belongsTo(Room::class);
     }
+
+    public function dailyPrices()
+    {
+        return $this->hasMany(DailyPrice::class);
+    }
 }

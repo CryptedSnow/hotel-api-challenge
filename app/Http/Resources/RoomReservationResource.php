@@ -24,6 +24,12 @@ class RoomReservationResource extends JsonResource
             'currencycode' => $this->currencycode,
             'meal_plan' => $this->meal_plan,
             'guest_counts' => $this->guest_counts,
+            'daily_prices' => $this->dailyPrices->map(function ($daily_price) {
+                return [
+                    'date'  => $daily_price->date,
+                    'price' => $daily_price->price,
+                ];
+            }),
             'totalprice' => $this->totalprice,
         ];
     }

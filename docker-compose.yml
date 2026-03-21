@@ -3,7 +3,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        container_name: iury-api-test
+        container_name: hotel-api-challenge-app
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         environment:
